@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    {{msg}}
+
+    <p v-text="msg"></p>
+
+    <p v-html="msg"></p>
+
+    <input type="text" v-model="msg">
+
+    <button v-on:click="clickFn">点击</button>
+
+    <div>
+      <p title="title">你好{{msg}}</p>
+      <div>
+        <p>{{msg}}
+          <a href="javascript:;">{{obj.b.x}}</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="./src/dep.js"></script>
+  <script src="./src/watcher.js"></script>
+  <script src="./src/observe.js"></script>
+  <script src="./src/compile.js"></script>
+  <script src="./src/vue.js"></script>
+  <script>
+    const vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello, minivue',
+        obj: {
+          a: 1,
+          b: {
+            x: 2,
+            y: 3
+          }
+        }
+      },
+      methods: {
+        clickFn() {
+          this.msg = 'world'
+          this.obj.b.x = 'lmmzss'
+        }
+      }
+    })
+
+    console.log(vm);
+
+  </script>
+</body>
+
+</html>
