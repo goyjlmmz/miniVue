@@ -12,7 +12,7 @@
   <div id="app">
     {{msg}}
 
-    <p v-text="msg"></p>
+    <!-- <p v-text="msg"></p>
 
     <p v-html="msg"></p>
 
@@ -27,7 +27,7 @@
           <a href="javascript:;">{{obj.b.x}}</a>
         </p>
       </div>
-    </div>
+    </div> -->
   </div>
 
   <script src="./src/dep.js"></script>
@@ -40,23 +40,23 @@
       el: '#app',
       data: {
         msg: 'hello, minivue',
-        obj: {
-          a: 1,
-          b: {
-            x: 2,
-            y: 3
-          }
-        }
+        // obj: {
+        //   a: 1,
+        //   b: {
+        //     x: 2,
+        //     y: 3
+        //   }
+        // }
       },
-      methods: {
-        clickFn() {
-          this.msg = 'world'
-          this.obj.b.x = 'lmmzss'
-        }
-      }
+      // methods: {
+      //   clickFn() {
+      //     this.msg = 'world'
+      //     this.obj.b.x = 'lmmzss'
+      //   }
+      // }
     })
 
-    console.log(vm);
+    // console.log(vm);
 
   </script>
 </body>

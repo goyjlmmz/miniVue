@@ -6,10 +6,10 @@ class Vue {
     this.$data = options.data
     this.$methods = options.methods
     
-    new Observe(this.$data)
+    if(this.$data) new Observe(this.$data)
 
-    this._proxy(this.$data)
-    this._proxy(this.$methods)
+    if(this.$data) this._proxy(this.$data)
+    if(this.$methods) this._proxy(this.$methods)
 
     if (this.$el) {
       new Compile(this.$el, this)
